@@ -1,0 +1,214 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    margin: 80px auto;
+    /* height: 50vh; */
+    gap: 40px;
+    /* background-color: blanchedalmond; */
+    border-radius: 20px;
+    position: relative;
+}
+
+.first-container, .second-container, .third-container{
+    display: flex;
+
+    
+}
+
+
+
+
+.humadity{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.humidity-percentage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: -15px;
+    font-size: 15px;
+    font-weight: 100;
+}
+.humidity-percentage h4{
+    margin-bottom: -20px;
+}
+
+
+
+
+.celsius h2{
+    margin-bottom: -20px;
+}
+
+
+.third-data{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    /* align-items: flex-start; */
+
+    /* justify-content: space-between; */
+
+}
+
+.aqi{
+ /* display: flex;
+ flex-direction: column;
+ align-items: center; */
+}
+.aqi h4 {
+    margin-top: 1px; 
+     margin-bottom: 1px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    /* background-color: black; */
+    /* gap: -85px; */
+}
+
+.healthy{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    background-color: rgb(118, 255, 55);
+   margin-bottom: 0;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   /* border-radius: 20px; */
+
+}
+
+
+
+.second-container{
+    background-color: rgb(233, 233, 53);
+    width: 80%;
+    padding: 20px;
+   align-items: center;
+   justify-content: space-around;
+   border-radius: 20px;
+   cursor: pointer;
+   /* pointer-events: ; */
+   
+}
+
+
+.first-container{
+    justify-content: space-around;
+    gap: 30px;
+    align-items: center;
+    /* background-color: black; */
+    opacity: 0;
+    /* display: none; */
+    transform: translateY(20px); /* Start position for animation */
+    transition: opacity 0.5s ease;
+    animation: fade-in 0.5s ease forwards; /* Initial animation */
+    pointer-events: none; /* Prevent interaction when not visible */
+}
+
+.demo{
+    background-color: blue;
+}
+.third-container{
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+    /* justify-content: center !important; */
+    align-items: center;
+    /* background-color: rgb(146, 102, 47); */
+    opacity: 0;
+    transform: translateY(20px); /* Start position for animation */
+    transition: opacity 0.8s ease;
+    animation: fade-in 0.8s ease forwards; /* Initial animation */
+    pointer-events: none; /* Prevent interaction when not visible */
+}
+
+.main-container .second-container:hover ~ .first-container{
+    opacity: 1;
+    /* display: block; */
+    transform: translateY(0); /* Reset position */
+    animation: slide-up 0.5s ease forwards; /* Animation on hover */
+}
+
+.main-container .second-container:hover ~ .third-container {
+    opacity: 1;
+    transform: translateY(0); 
+    animation: slide-bottem 0.5s ease forwards; 
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(0);
+      /* display: none; */
+      opacity: 0;
+      
+    }
+    25%{
+        transform: translateY(-100);
+        /* display: none; */
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-200);
+        /* display: none; */
+        opacity: 0;
+    }
+    75%{
+        transform: translateY(-220px);
+        
+       opacity: 1;
+    }
+    100% {
+      transform: translateY(-240px);
+       /* display: block; */
+      opacity: 1;
+      /* z-index: 100; */
+    }
+  }
+
+
+  /* @keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+  } */
+
+  @keyframes slide-bottem {
+    from {
+      transform: translateY(-140px);
+      opacity: 0;
+      /* display: none; */
+    }
+    50%{
+        transform: translateY(-137);
+        /* display: none; */
+        opacity: 0;
+    }
+    75%{
+        transform: translateY(-135px);
+        
+       opacity: 0;
+    }
+    to {
+      transform: translateY(-130px);
+      opacity: 1;
+      /* display: block; */
+    }
+  }
+  
